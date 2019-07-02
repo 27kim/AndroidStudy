@@ -61,6 +61,7 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
+            mAdapter.setmCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
         updateSubtitle();
@@ -125,6 +126,10 @@ public class CrimeListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mCrimes.size();
+        }
+
+        public void setmCrimes(List<Crime> crimes){
+            mCrimes = crimes;
         }
 
     }
